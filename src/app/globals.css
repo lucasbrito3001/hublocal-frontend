@@ -1,6 +1,8 @@
 :root {
-    --principal-color: #0485FF;
+    --primary-color: #0385FD;
     --secondary-color: #00CC99;
+    --default-border-radius: 5px;
+    --danger-color: #C90808;
 }
 
 * {

@@ -21,9 +21,9 @@ export const authorizationSlice = createSlice({
     }
 })
 
-export const { setUser } = authorizationSlice.actions
-export const { toggleIsLoading } = authorizationSlice.actions
-export const authorizationReducer = authorizationSlice.reducer
+const { actions, reducer } = authorizationSlice
+export const { setUser, toggleIsLoading } = actions
+export const authorizationReducer = reducer
 
 // fetchActions
 export function signIn({ email, password }) {
@@ -45,7 +45,7 @@ export function signIn({ email, password }) {
                     ? 'Email e/ou senha incorretos'
                     : 'Erro inesperado, entre em contato com o administrador'
             )
-            
+
             dispatch(toggleIsLoading())
         }
     }

@@ -8,13 +8,11 @@ import { SIGNIN_FORM_FIELDS, SIGNIN_FORM_FIELDS_SCHEMA } from "./constants";
 import { signIn } from "../../../redux/features/auth";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function SignIn({ 
-    signInAction = signIn
-}) {
+export default function SignIn() {
     const dispatch = useDispatch()
     const isLoading = useSelector(state => state.authorization.isLoading)
 
-    const onSubmit = values => dispatch(signInAction(values))
+    const onSubmit = values => dispatch(signIn(values))
 
     return (
         <>

@@ -35,6 +35,7 @@ O projeto possui um fluxo de uso simples e intuitivo, a tela inicial é a de sig
 Uma vez criado o usuário, basta fazer o login que você será redirecionado para o dashboard onde poderá criar e manipular suas empresas e seus respectivos locais.
 
 Link do app: https://hublocal-test.lucasdbrito.com
+
 Link da apresentação: https://www.loom.com/embed/ccdd53539cde4e5b980d31c646ac099d
 
 > <div style="padding: 8px 0">This is a challenge by <a href="https://coodesh.com/" target="_blank">Coodesh</a></div>

@@ -1,38 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Controle de instalações de empresas - HubLocal**
 
-## Getting Started
+A ideia inicial do projeto é oferecer para o usuário a possibilidade de controlar, de forma simples, os locais onde suas empresas estão, e, posteriormente, usá-los para inserir suas marcas nos principais mapas e listas da internet. Neste reposítório você encontra o código da interface utilizada pela aplicação, que dispõe de uma tela inicial de cadastro e acesso, e um dashboard disponível somente para usuários autenticados, onde ele poderá manipular suas empresas e seus respectivos locais.
 
-First, run the development server:
+## **Lista de linguagens, tecnologias e frameworks utilizados**
+- React
+- Next JS
+- Redux
+- Redux Persist
+- Material UI
+- Axios
+- React Hook Form
+- Styled Components
+- React Toastify
+
+## **Instalação e uso do projeto**
+O setup da aplicação é simples, basta instalar as dependências e levantar a aplicação manualmente.
+
+Porém, antes disso, será necessário a criação de um arquivo ***.env.local*** que deve seguir o template do arquivo ***.env.local.template*** que se encontra na raíz do projeto. Feito isso podemos iniciar a instalação do projeto.
+
+Primeiro, será necessário instalar as dependências do projeto, abra um terminal e vá até o diretório raíz do repositório, onde está o arquivo package.json e rode um dos comandos abaixo
+
+```bash
+npm install
+yarn
+```
+E pronto, já está tudo preparado para levantar o projeto, basta iniciar o servidor em modo desenvolvimento usando um dos comandos abaixo
 
 ```bash
 npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto possui um fluxo de uso simples e intuitivo, a tela inicial é a de sign in, nela você irá encontrar um botão **"Registrar"** que te levará para a tela de sign up onde você poderá criar seu usuário. 
+Uma vez criado o usuário, basta fazer o login que você será redirecionado para o dashboard onde poderá criar e manipular suas empresas e seus respectivos locais.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> <div style="padding: 8px 0">This is a challenge by <a href="https://coodesh.com/" target="_blank">Coodesh</a></div>

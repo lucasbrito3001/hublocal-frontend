@@ -1,40 +1,39 @@
 "use client"
 
 // components
-import DynamicForm from "@/components/dynamicForm/form";
+import DynamicForm from "@/components/dynamicForm";
 import { LinkButton } from "../styled";
 import Link from "next/link";
 import { SIGNIN_FORM_FIELDS, SIGNIN_FORM_FIELDS_SCHEMA } from "./constants";
-import { signIn } from "../../../services/auth";
+import { signIn } from "../../../redux/features/auth";
 import { toast } from "react-toastify";
-import { setToken } from '@/redux/features/auth'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
-export default function SignIn({ signinService = signIn }) {
+export default function SignIn({ 
+    signInAction = signIn
+}) {
     const dispatch = useDispatch()
+    const isLoading = useSelector(state => state.authorization.isLoading)
 
-    const trySignin = async values => {
-        const { status, token, message } = await signinService(values)
-
-        console.log(status, token, message)
-
-        if(!status) return toast.error('Email e/ou senha incorretos')
-
-        toast.success('Logado com sucesso')
-        dispatch(setToken({ token }))
-    }
+    const onSubmit = values => dispatch(signInAction(values))
 
     return (
-        <div>
-            <DynamicForm 
-                fields={SIGNIN_FORM_FIELDS} 
-                fieldsSchema={SIGNIN_FORM_FIELDS_SCHEMA}
-                onSubmit={trySignin}
-                textSubmitButton="LOGAR"
-            />
-            <LinkButton color="secondary" variant="contained">
-                <Link href="/signup">CRIAR CONTA</Link>
-            </LinkButton>
-        </div>
+        <>
+            <title>SignIn - HubLocal</title>
+            <div>
+                <DynamicForm 
+                    fields={SIGNIN_FORM_FIELDS} 
+                    fieldsSchema={SIGNIN_FORM_FIELDS_SCHEMA}
+                    onSubmit={onSubmit}
+                    textSubmitButton="LOGAR"
+                    isLoading={isLoading}
+                    initialValue={{}}
+                />
+                <LinkButton color="secondary" variant="contained">
+                    <Link href="/signup">CRIAR CONTA</Link>
+                </LinkButton>
+            </div>
+        </>
     )
 }

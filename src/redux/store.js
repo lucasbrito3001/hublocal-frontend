@@ -3,10 +3,14 @@ import { authorizationReducer } from "./features/auth"
 import { persistReducer, persistStore } from "redux-persist"
 import storage from 'redux-persist/lib/storage';
 import thunk from "redux-thunk";
+import { companiesReducer } from "./features/companies";
+import { locationsReducer } from "./features/locations";
+import { dynamicTableReducer } from "./features/dynamicTable";
 
 const persistConfig = {
     key: 'authorization',
-    storage
+    storage,
+    whitelist: ['user']
 }
 
 const persistedAuthorizationReducer = persistReducer(persistConfig, authorizationReducer)
@@ -14,6 +18,9 @@ const persistedAuthorizationReducer = persistReducer(persistConfig, authorizatio
 export const store = configureStore({
     reducer: {
         authorization: persistedAuthorizationReducer,
+        companies: companiesReducer,
+        locations: locationsReducer,
+        dynamicTable: dynamicTableReducer
     },
     devTools: true,
     middleware: [thunk]

@@ -8,6 +8,10 @@ export const FieldInput = styled.input`
     font-size: 1.3rem;
     border: 2px solid var(--primary-color);
     border-radius: var(--default-border-radius);
+
+    &[disabled] {
+        opacity: 0.5;
+    }
 `;
 
 export const FieldWrapper = styled.div`
@@ -19,7 +23,7 @@ export const FieldLabel = styled.label`
 `;
 
 export const FieldErrorMessage = styled.span`
-    color: var(--danger-color);
+    color: var(--error-color);
     display: block;
     font-size: 0.75rem;
 `;

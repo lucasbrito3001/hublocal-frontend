@@ -1,14 +1,14 @@
 "use client"
 
-import DynamicForm from "@/components/dynamicForm/form";
+import DynamicForm from "@/components/dynamicForm";
 import Link from "next/link";
 import { LinkButton } from "../styled";
 import { SIGNUP_FORM_FIELDS, SIGNUP_FORM_FIELDS_SCHEMA } from "./constants";
+import { useDispatch } from "react-redux";
+import { signUp } from "@/services/user";
 
-export default function SignUp({ signupService }) {
-    const onSubmit = async values => {
-        const { status } = await signupService(values)
-    }
+export default function SignUp({ signUpService = signUp }) {
+    const onSubmit = values => signUpService(values)
 
     return (
         <div>
@@ -17,6 +17,7 @@ export default function SignUp({ signupService }) {
                 fieldsSchema={SIGNUP_FORM_FIELDS_SCHEMA}
                 textSubmitButton="REGISTRAR"
                 onSubmit={onSubmit}
+                initialValue={{}}
             />
             <LinkButton color="secondary" variant="contained">
                 <Link href="/signin">LOGAR</Link>

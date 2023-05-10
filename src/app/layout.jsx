@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify'
 import { Provider } from 'react-redux';
 import { persistor, store } from '@/redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { ptBR } from '@mui/material/locale';
 
 const poppins = Poppins({ weight: ['100', '300', '400', '500', '600', '700'], subsets: ['devanagari'] })
 
@@ -20,8 +21,9 @@ const theme = createTheme({
         secondary: {
             main: "#00CC99"
         }
-    }
-})
+    },
+    typography: poppins.style
+}, ptBR)
 
 export default function RootLayout({ children }) {
     return (

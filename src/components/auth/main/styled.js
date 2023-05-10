@@ -10,6 +10,7 @@ export const AuthForm = styled.div`
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, #ECECEC 0%, #FFFFFF 14.58%);
+    padding: 16px;
 `;
 
 export const AuthFormContainer = styled.div`

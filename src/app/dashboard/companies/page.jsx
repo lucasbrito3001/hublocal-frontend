@@ -95,6 +95,7 @@ export default function Companies() {
 
     return (
         <>
+            <title>HubLocal | Dashboard</title>
             <DashboardBodyContent>
                 {companies.length > 0 && totalCompanies
                     ? <>

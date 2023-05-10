@@ -106,6 +106,7 @@ export default function Locations() {
 
     return (
         <>
+            <title>HubLocal | Dashboard</title>
             <DashboardBodyContent>
                 <div>
                     <DashboardBackButton href="/dashboard/companies">

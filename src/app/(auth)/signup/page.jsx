@@ -11,17 +11,20 @@ export default function SignUp({ signUpService = signUp }) {
     const onSubmit = values => signUpService(values)
 
     return (
-        <div>
-            <DynamicForm 
-                fields={SIGNUP_FORM_FIELDS}
-                fieldsSchema={SIGNUP_FORM_FIELDS_SCHEMA}
-                textSubmitButton="REGISTRAR"
-                onSubmit={onSubmit}
-                initialValue={{}}
-            />
-            <LinkButton color="secondary" variant="contained">
-                <Link href="/signin">LOGAR</Link>
-            </LinkButton>
-        </div>
+        <>
+            <title>HubLocal | SignUp</title>
+            <div>
+                <DynamicForm 
+                    fields={SIGNUP_FORM_FIELDS}
+                    fieldsSchema={SIGNUP_FORM_FIELDS_SCHEMA}
+                    textSubmitButton="REGISTRAR"
+                    onSubmit={onSubmit}
+                    initialValue={{}}
+                />
+                <LinkButton color="secondary" variant="contained">
+                    <Link href="/signin">LOGAR</Link>
+                </LinkButton>
+            </div>
+        </>
     )
 }

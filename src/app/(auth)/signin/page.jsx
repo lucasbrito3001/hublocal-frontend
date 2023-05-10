@@ -20,7 +20,7 @@ export default function SignIn({
 
     return (
         <>
-            <title>SignIn - HubLocal</title>
+            <title>HubLocal | SignIn</title>
             <div>
                 <DynamicForm 
                     fields={SIGNIN_FORM_FIELDS} 

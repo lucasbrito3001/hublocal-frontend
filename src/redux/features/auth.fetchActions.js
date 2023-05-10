@@ -16,7 +16,7 @@ export function signIn({ email, password }) {
             window.location.pathname = '/dashboard'
         } catch (error) {
             const dataError = error.response.data
-            dispatch(setUser(initialState.user))
+            dispatch(setUser({}))
             toast.error(
                 dataError?.statusCode === 401
                     ? 'Email e/ou senha incorretos'
@@ -30,7 +30,7 @@ export function signIn({ email, password }) {
 
 export function logOut() {
     return async dispatch => {
-        dispatch(setUser(initialState.user))
+        dispatch(setUser({}))
         window.location.pathname = '/signin'
     }
 }

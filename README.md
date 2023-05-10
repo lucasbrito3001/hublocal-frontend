@@ -34,4 +34,6 @@ yarn dev
 O projeto possui um fluxo de uso simples e intuitivo, a tela inicial é a de sign in, nela você irá encontrar um botão **"Registrar"** que te levará para a tela de sign up onde você poderá criar seu usuário. 
 Uma vez criado o usuário, basta fazer o login que você será redirecionado para o dashboard onde poderá criar e manipular suas empresas e seus respectivos locais.
 
+Link do app: https://hublocal-test.lucasdbrito.com
+
 > <div style="padding: 8px 0">This is a challenge by <a href="https://coodesh.com/" target="_blank">Coodesh</a></div>

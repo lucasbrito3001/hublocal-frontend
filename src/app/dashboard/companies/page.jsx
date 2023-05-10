@@ -4,7 +4,7 @@ import DynamicTable from "@/components/dynamicTable";
 import { GeneralButton } from "@/app/styled";
 import { DashboardBodyContent, DashboardButtonWrapper, DashboardTableWrapper } from "../styled";
 import { useDispatch, useSelector } from "react-redux";
-import { createCompany, deleteCompany, editCompany, getCompanies, toggleIsOpenDialog } from "@/redux/features/companies";
+import { createCompany, deleteCompany, editCompany, getCompanies } from "@/redux/features/companies.fetchActions";
 import { useEffect, useState } from "react";
 import GeneralDialog from "@/components/dialog";
 import DynamicForm from "@/components/dynamicForm";
@@ -17,6 +17,7 @@ import {
 import { useRouter } from "next/navigation";
 import { DialogContentText } from "@mui/material";
 import EmptyListView from "@/components/dashboard/emptyListView";
+import { toggleIsOpenDialog } from "@/redux/features/companies";
 
 export default function Companies() {
     const defaultValue = { name: '', cnpj: '', webiste: '' }

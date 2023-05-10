@@ -7,13 +7,14 @@ import { DashboardBackButton, DashboardBodyContent, DashboardButtonWrapper, Dash
 import { LeftArrow } from "@/components/icons";
 import GeneralDialog from '@/components/dialog'
 import { useDispatch, useSelector } from "react-redux";
-import { createLocation, deleteLocation, editLocation, getLocations, toggleIsOpenDialog } from "@/redux/features/locations";
+import { createLocation, deleteLocation, editLocation, getLocations } from "@/redux/features/locations.fetchActions";
 import DynamicForm from "@/components/dynamicForm";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { DialogContentText } from "@mui/material";
 import EmptyListView from "@/components/dashboard/emptyListView";
-import { getCompany } from "@/redux/features/companies";
+import { getCompany } from "@/redux/features/companies.fetchActions";
+import { toggleIsOpenDialog } from "@/redux/features/locations";
 
 export default function Locations() {
     const defaultValue = {

@@ -9,7 +9,7 @@ import { StyledMenu } from "./styledMenu";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Logout } from "@mui/icons-material"
 import { useState } from "react";
-import { logOut } from "@/redux/features/auth";
+import { logOut } from "@/redux/features/auth.fetchActions";
 
 export default function DashboardHeader({ logOutAction = logOut }) {
     const pathname = usePathname()

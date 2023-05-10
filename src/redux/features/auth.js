@@ -1,6 +1,4 @@
-import { api } from '@/services/api'
 import { createSlice } from '@reduxjs/toolkit'
-import { toast } from 'react-toastify'
 
 const initialState = {
     user: {
@@ -24,36 +22,3 @@ export const authorizationSlice = createSlice({
 const { actions, reducer } = authorizationSlice
 export const { setUser, toggleIsLoading } = actions
 export const authorizationReducer = reducer
-
-// fetchActions
-export function signIn({ email, password }) {
-    return async dispatch => {
-
-        try {
-            dispatch(toggleIsLoading())
-
-            const { data: { token, user } } = await api.post('/auth/login', { email, password })
-
-            dispatch(setUser({ token, ...user }))
-            toast.success('Logado com sucesso!')
-            window.location.pathname = '/dashboard'
-        } catch (error) {
-            const dataError = error.response.data
-            dispatch(setUser(initialState.user))
-            toast.error(
-                dataError?.statusCode === 401
-                    ? 'Email e/ou senha incorretos'
-                    : 'Erro inesperado, entre em contato com o administrador'
-            )
-
-            dispatch(toggleIsLoading())
-        }
-    }
-}
-
-export function logOut() {
-    return async dispatch => {
-        dispatch(setUser(initialState.user))
-        window.location.pathname = '/signin'
-    }
-}

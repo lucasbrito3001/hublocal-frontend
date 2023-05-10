@@ -5,7 +5,7 @@ import DynamicForm from "@/components/dynamicForm";
 import { LinkButton } from "../styled";
 import Link from "next/link";
 import { SIGNIN_FORM_FIELDS, SIGNIN_FORM_FIELDS_SCHEMA } from "./constants";
-import { signIn } from "../../../redux/features/auth";
+import { signIn } from "../../../redux/features/auth.fetchActions";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function SignIn() {
